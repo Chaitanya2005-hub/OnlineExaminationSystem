@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.author.PostNoticeController"
+      style="-fx-padding: 30; -fx-background-color: white;" prefWidth="500" prefHeight="400">
+
+    <Label text="📢 Post New Announcement" textFill="#c62828">
+        <font><Font name="System Bold" size="20"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <Label text="Title:" style="-fx-font-weight: bold;"/>
+    <TextField fx:id="titleField" promptText="e.g. Exam Schedule Update"/>
+
+    <Label text="Message:" style="-fx-padding: 15 0 5 0; -fx-font-weight: bold;"/>
+    <TextArea fx:id="messageField" promptText="Type your message here..." prefRowCount="5" wrapText="true"/>
+
+    <HBox alignment="CENTER_RIGHT" style="-fx-padding: 20 0 0 0;">
+        <Button text="Post Now" onAction="#handlePost"
+                style="-fx-background-color: #c62828; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-cursor: hand;"/>
+    </HBox>
+
+</VBox>

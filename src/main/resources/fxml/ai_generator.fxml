@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.teacher.AiGeneratorController"
+      style="-fx-padding: 20; -fx-background-color: white;" prefWidth="900" prefHeight="700">
+
+    <Label text="🤖 AI Question Generator &amp; Review" textFill="#4527a0">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <!-- INPUT CONTROLS -->
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <VBox spacing="5">
+            <Label text="Target Exam:" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="examSelector" prefWidth="250"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Subject:" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="subjectBox" prefWidth="200"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Difficulty:" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="difficultyBox" prefWidth="150"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Count:" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="countField" prefWidth="80" promptText="5"/>
+        </VBox>
+        <Button text="✨ Generate Preview" onAction="#handleGenerate"
+                style="-fx-background-color: #673ab7; -fx-text-fill: white; -fx-font-weight: bold; -fx-translate-y: 10;"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" style="-fx-padding: 15 0;" textFill="BLUE"/>
+
+    <!-- PREVIEW TABLE -->
+    <Label text="Preview (Verify before saving):" style="-fx-font-weight: bold; -fx-font-size: 14;"/>
+    <TableView fx:id="previewTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colQ" text="Question" prefWidth="300"/>
+            <TableColumn fx:id="colA" text="Option A" prefWidth="100"/>
+            <TableColumn fx:id="colB" text="Option B" prefWidth="100"/>
+            <TableColumn fx:id="colC" text="Option C" prefWidth="100"/>
+            <TableColumn fx:id="colD" text="Option D" prefWidth="100"/>
+            <TableColumn fx:id="colAns" text="Answer" prefWidth="50"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <!-- SAVE BUTTON -->
+    <HBox alignment="CENTER_RIGHT" style="-fx-padding: 20 0 0 0;">
+        <Button fx:id="saveButton" text="✅ Confirm &amp; Upload to Student Portal" onAction="#handleSaveToDB"
+                disable="true"
+                style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 25; -fx-font-size: 14px;"/>
+    </HBox>
+</VBox>

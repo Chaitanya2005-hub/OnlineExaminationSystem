@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.teacher.UploadQuestionsController"
+      style="-fx-padding: 20; -fx-background-color: white;" prefWidth="600" prefHeight="500">
+
+    <Label text="Upload Question" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <ComboBox fx:id="examSelector" promptText="Select Exam" prefWidth="300"/>
+
+    <TextArea fx:id="questionText" promptText="Enter Question Text" prefRowCount="3"/>
+
+    <TextField fx:id="optA" promptText="Option A"/>
+    <TextField fx:id="optB" promptText="Option B"/>
+    <TextField fx:id="optC" promptText="Option C"/>
+    <TextField fx:id="optD" promptText="Option D"/>
+
+    <ComboBox fx:id="correctAns" promptText="Correct Answer"/>
+
+    <Button text="Save Question" onAction="#handleUpload" style="-fx-background-color: #2e7d32; -fx-text-fill: white;"/>
+
+    <Label fx:id="statusLabel" textFill="green"/>
+</VBox>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.student.AdmitCardController"
+      style="-fx-padding: 40; -fx-background-color: #e3f2fd;" prefWidth="550" prefHeight="650" alignment="TOP_CENTER">
+
+    <!-- STATUS MESSAGE (Visible if blocked) -->
+    <Label fx:id="lblStatus" text="Checking Status..." textFill="RED">
+        <font><Font size="18"/></font>
+    </Label>
+
+    <!-- CARD LAYOUT (Hidden initially) -->
+    <VBox fx:id="cardLayout" visible="false" style="-fx-background-color: white; -fx-padding: 30; -fx-border-color: #1565c0; -fx-border-width: 3; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+
+        <VBox alignment="CENTER" spacing="5">
+            <Label text="STARK UNIVERSITY" textFill="#1565c0">
+                <font><Font name="System Bold" size="22"/></font>
+            </Label>
+            <Label text="Official Admit Card - 2025" textFill="#757575">
+                <font><Font size="14"/></font>
+            </Label>
+            <Separator style="-fx-padding: 10 0 20 0;"/>
+        </VBox>
+
+        <HBox spacing="30">
+            <VBox spacing="15">
+                <Label fx:id="lblName" text="Name: -" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+                <Label fx:id="lblRoll" text="Roll No: -" style="-fx-font-size: 16;"/>
+                <Label text="Course: B.Tech CSE" style="-fx-font-size: 16;"/>
+                <Label text="Semester: IV" style="-fx-font-size: 16;"/>
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <StackPane style="-fx-border-color: black; -fx-pref-width: 100; -fx-pref-height: 120;">
+                <Label text="PHOTO" textFill="#9e9e9e"/>
+            </StackPane>
+        </HBox>
+
+        <Separator style="-fx-padding: 25 0;"/>
+
+        <VBox spacing="10">
+            <Label text="Examination Details:" style="-fx-font-weight: bold; -fx-font-size: 16; -fx-underline: true;"/>
+            <Label text="Center: BLOCK A, EXAM HALL 1" style="-fx-font-size: 14;"/>
+            <Label text="Reporting Time: 09:30 AM" style="-fx-font-size: 14;"/>
+        </VBox>
+
+        <Region prefHeight="40"/>
+
+        <HBox alignment="CENTER_RIGHT">
+            <Label text="Controller of Examinations" style="-fx-font-style: italic;"/>
+        </HBox>
+    </VBox>
+
+    <Region prefHeight="20"/>
+
+    <!-- Print Button -->
+    <Button text="🖨️ Print Admit Card" style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 30; -fx-cursor: hand;"/>
+    <Button text="🖨️ Print Admit Card" onAction="#handlePrint"
+            style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 30; -fx-cursor: hand;"/>
+
+</VBox>

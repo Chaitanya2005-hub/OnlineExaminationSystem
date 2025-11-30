@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.teacher.TeacherDashboardController"
+      style="-fx-background-color: #f5f5f5;" prefWidth="450" prefHeight="700">
+
+    <!-- HEADER (Green) -->
+    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #2e7d32; -fx-padding: 30 20 20 20; -fx-background-radius: 0 0 20 20;">
+        <StackPane>
+            <Circle radius="35" fill="WHITE"/>
+            <Label text="👨‍🏫" style="-fx-font-size: 40px;"/>
+        </StackPane>
+        <Label fx:id="teacherNameLabel" text="TEACHER NAME" textFill="WHITE">
+            <font><Font name="System Bold" size="18"/></font>
+        </Label>
+        <Label fx:id="teacherIdLabel" text="FACULTY ID" textFill="WHITE" style="-fx-opacity: 0.9;"/>
+    </VBox>
+
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-padding: 20;" hbarPolicy="NEVER">
+        <VBox spacing="15">
+            <Label text="Faculty Tools" style="-fx-font-weight: bold; -fx-font-size: 16;"/>
+            <FlowPane fx:id="menuGrid" hgap="15" vgap="15" alignment="TOP_CENTER" prefWrapLength="400"/>
+        </VBox>
+    </ScrollPane>
+</VBox>

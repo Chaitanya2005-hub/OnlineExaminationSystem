@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.author.SystemReportsController"
+      style="-fx-padding: 30; -fx-background-color: white;" prefWidth="800" prefHeight="600">
+
+    <Label text="📈 System Analytics Report" textFill="#37474f">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <!-- TOP STATS -->
+    <HBox spacing="20" alignment="CENTER">
+        <VBox style="-fx-background-color: #e3f2fd; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 150;" alignment="CENTER">
+            <Label text="Students" style="-fx-font-size: 14;"/>
+            <Label fx:id="lblTotalStudents" text="0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #1565c0;"/>
+        </VBox>
+        <VBox style="-fx-background-color: #e8f5e9; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 150;" alignment="CENTER">
+            <Label text="Faculty" style="-fx-font-size: 14;"/>
+            <Label fx:id="lblTotalTeachers" text="0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+        </VBox>
+        <VBox style="-fx-background-color: #fff3e0; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 150;" alignment="CENTER">
+            <Label text="Exams Conducted" style="-fx-font-size: 14;"/>
+            <Label fx:id="lblTotalExams" text="0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #ef6c00;"/>
+        </VBox>
+    </HBox>
+
+    <Region prefHeight="20"/>
+
+    <!-- CHARTS ROW -->
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <!-- Pass/Fail Pie Chart -->
+        <VBox HBox.hgrow="ALWAYS" style="-fx-border-color: #eee; -fx-border-radius: 10; -fx-padding: 10;">
+            <Label text="Pass/Fail Ratio" style="-fx-font-weight: bold;"/>
+            <PieChart fx:id="passFailChart" labelsVisible="true" legendVisible="false"/>
+        </VBox>
+
+        <!-- Section Performance Bar Chart -->
+        <VBox HBox.hgrow="ALWAYS" style="-fx-border-color: #eee; -fx-border-radius: 10; -fx-padding: 10;">
+            <Label text="Performance by Section" style="-fx-font-weight: bold;"/>
+            <BarChart fx:id="sectionChart" legendVisible="false">
+                <xAxis><CategoryAxis label="Section"/></xAxis>
+                <yAxis><NumberAxis label="Avg Score %"/></yAxis>
+            </BarChart>
+        </VBox>
+    </HBox>
+
+</VBox>

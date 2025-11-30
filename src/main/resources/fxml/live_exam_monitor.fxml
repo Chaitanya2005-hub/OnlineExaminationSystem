@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.teacher.LiveExamController"
+      style="-fx-padding: 20; -fx-background-color: #212121;" prefWidth="900" prefHeight="500">
+
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <Label text="🔴 LIVE EXAM COMMAND CENTER" textFill="RED">
+            <font><Font name="System Bold" size="24"/></font>
+        </Label>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="lastUpdatedLabel" text="Waiting..." textFill="WHITE"/>
+    </HBox>
+
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <TableView fx:id="liveTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colStudent" text="Student Name" prefWidth="200"/>
+            <TableColumn fx:id="colExam" text="Exam Title" prefWidth="150"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="colWarnings" text="⚠️ Warnings" prefWidth="80"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <HBox spacing="15" style="-fx-padding: 10 0 0 0;">
+        <Label text="Legend:" textFill="WHITE" style="-fx-font-weight: bold;"/>
+        <Label text="🟨 Yellow = Request Pending" textFill="#fff9c4"/>
+        <Label text="🟥 Red = Cheating Detected" textFill="#ffcdd2"/>
+    </HBox>
+</VBox>

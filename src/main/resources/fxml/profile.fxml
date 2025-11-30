@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.student.ProfileController"
+      style="-fx-background-color: white; -fx-padding: 0;" prefWidth="400" prefHeight="600">
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #1565c0; -fx-padding: 30 20 20 20;">
+
+        <!-- Photo Area -->
+        <StackPane>
+            <Circle radius="52" fill="WHITE" stroke="#bbdefb" strokeWidth="2"/>
+            <ImageView fx:id="profileImage" fitWidth="100" fitHeight="100" preserveRatio="false"/>
+            <!-- If no image, you might want a default icon behind or fallback logic in code -->
+        </StackPane>
+
+        <Button text="📷 Upload Photo" onAction="#handleUploadPhoto"
+                style="-fx-background-color: white; -fx-text-fill: #1565c0; -fx-font-size: 11px; -fx-padding: 5 15; -fx-background-radius: 15; -fx-cursor: hand;"/>
+
+        <Label fx:id="nameLabel" text="USER NAME" textFill="WHITE">
+            <font><Font name="System Bold" size="20"/></font>
+        </Label>
+        <Label fx:id="roleLabel" text="ROLE" textFill="WHITE" style="-fx-opacity: 0.8;"/>
+    </VBox>
+
+    <!-- Details -->
+    <VBox spacing="15" style="-fx-padding: 30;">
+        <Label text="Profile Details" style="-fx-font-weight: bold; -fx-font-size: 16;"/>
+        <Separator/>
+
+        <GridPane vgap="15" hgap="10">
+            <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0" textFill="#757575"/>
+            <TextField fx:id="usernameField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="ERP / Roll No:" GridPane.rowIndex="1" GridPane.columnIndex="0" textFill="#757575"/>
+            <TextField fx:id="erpIdField" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Department:" GridPane.rowIndex="2" GridPane.columnIndex="0" textFill="#757575"/>
+            <TextField fx:id="deptField" editable="false" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Year:" GridPane.rowIndex="3" GridPane.columnIndex="0" textFill="#757575"/>
+            <TextField fx:id="yearField" editable="false" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+    </VBox>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <HBox alignment="CENTER" style="-fx-padding: 20;">
+        <Button text="Close Window" onAction="#handleClose" style="-fx-background-color: #eee; -fx-text-fill: #333; -fx-padding: 10 30; -fx-cursor: hand;"/>
+    </HBox>
+
+</VBox>

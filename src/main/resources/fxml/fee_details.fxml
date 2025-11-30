@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.student.FeeController"
+      style="-fx-padding: 30; -fx-background-color: white;" prefWidth="500" prefHeight="400">
+
+    <Label text="💵 Fee Status" textFill="#2e7d32">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <GridPane vgap="15" hgap="20">
+        <Label text="Total Fee:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblTotal" text="-" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Paid Amount:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblPaid" text="-" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Pending Amount:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblPending" text="-" GridPane.rowIndex="2" GridPane.columnIndex="1" textFill="RED"/>
+    </GridPane>
+
+    <Region prefHeight="20"/>
+    <Label text="Payment Progress:"/>
+    <ProgressBar fx:id="feeProgress" prefWidth="400" progress="0.0"/>
+
+    <Region prefHeight="30"/>
+    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #f5f5f5; -fx-padding: 15; -fx-background-radius: 10;">
+        <Label text="Admin Approval Status:" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblStatus" text="Checking..." style="-fx-font-weight: bold;"/>
+    </HBox>
+</VBox>

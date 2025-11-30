@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.student.ExamListController"
+      style="-fx-padding: 30; -fx-background-color: white;" prefWidth="500" prefHeight="600">
+
+    <Label text="Select an Exam" textFill="#1565c0">
+        <font><Font name="System Bold" size="24"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+        <VBox fx:id="examContainer" spacing="15"/>
+    </ScrollPane>
+</VBox>

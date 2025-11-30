@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.author.ScheduleExamController"
+      style="-fx-padding: 30; -fx-background-color: white;" prefWidth="500">
+
+    <Label text="📅 Schedule New Exam" textFill="#c62828">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <GridPane vgap="15" hgap="15">
+        <Label text="Exam Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="examTitle" promptText="e.g. Java Finals" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="examDate" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Time (HH:mm:ss):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="examTime" promptText="10:00:00" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Duration (mins):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="examDuration" promptText="60" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Create Schedule" onAction="#handleCreate" style="-fx-background-color: #c62828; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; margin-top: 20;"/>
+    <Label fx:id="statusLabel" textFill="green"/>
+</VBox>

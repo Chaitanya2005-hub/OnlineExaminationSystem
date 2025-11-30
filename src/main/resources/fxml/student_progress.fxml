@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.teacher.StudentProgressController"
+      style="-fx-padding: 20; -fx-background-color: white;" prefWidth="700" prefHeight="500">
+
+    <Label text="📊 Student Performance Analysis" textFill="#2e7d32">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="Enter Student ERP ID:" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="searchField" promptText="e.g. 2025001"/>
+        <Button text="🔍 Search" onAction="#handleSearch" style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" style="-fx-padding: 10 0;" textFill="RED"/>
+
+    <BarChart fx:id="performanceChart" title="Exam Scores" VBox.vgrow="ALWAYS">
+        <xAxis><CategoryAxis label="Exam Name"/></xAxis>
+        <yAxis><NumberAxis label="Score"/></yAxis>
+    </BarChart>
+</VBox>

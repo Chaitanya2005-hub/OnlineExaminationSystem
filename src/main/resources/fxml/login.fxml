@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.stark.exam.ui.login.LoginController"
+           style="-fx-background-color: linear-gradient(to bottom right, #1a237e, #0d47a1);">
+
+    <VBox alignment="CENTER" spacing="20" maxWidth="400" style="-fx-background-color: white; -fx-padding: 40; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);">
+        <Label text="Stark Exam System" textFill="#1a237e">
+            <font><Font name="System Bold" size="28"/></font>
+        </Label>
+        <Label text="Secure Login" textFill="#757575">
+            <font><Font size="14"/></font>
+        </Label>
+
+        <TextField fx:id="usernameField" promptText="Username / ERP ID" style="-fx-padding: 10; -fx-background-radius: 5;"/>
+        <PasswordField fx:id="passwordField" promptText="Password" style="-fx-padding: 10; -fx-background-radius: 5;"/>
+
+        <Button fx:id="loginButton" text="LOGIN" onAction="#handleLogin"
+                maxWidth="Infinity" style="-fx-background-color: #1a237e; -fx-text-fill: white; -fx-padding: 12; -fx-font-weight: bold; -fx-cursor: hand;"/>
+
+        <Label fx:id="errorLabel" textFill="RED"/>
+    </VBox>
+</StackPane>

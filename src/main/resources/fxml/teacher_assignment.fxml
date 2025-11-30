@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.teacher.AssignmentController"
+      style="-fx-padding: 20; -fx-background-color: white;" prefWidth="600" prefHeight="500">
+
+    <Label text="📂 Post New Assignment" textFill="#00796b">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <GridPane vgap="15" hgap="10">
+        <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="titleField" promptText="Assignment Title" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.valignment="TOP"/>
+        <TextArea fx:id="descField" promptText="Instructions..." prefRowCount="4" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Due Date:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="datePicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT" style="-fx-padding: 20 0 0 0;">
+        <Button text="Post Assignment" onAction="#handlePost"
+                style="-fx-background-color: #00796b; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+</VBox>

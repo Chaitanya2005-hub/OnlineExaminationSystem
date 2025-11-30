@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.stark.exam.ui.student.ExamInterfaceController"
+            style="-fx-background-color: #f5f5f5;">
+
+    <top>
+        <HBox style="-fx-background-color: #2196f3; -fx-padding: 15;" alignment="CENTER_LEFT">
+            <Label fx:id="examTitleLabel" text="Exam Title" textFill="WHITE" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Time Left: " textFill="WHITE"/>
+            <Label fx:id="timerLabel" text="00:00" textFill="WHITE" style="-fx-font-weight: bold; -fx-font-size: 18;"/>
+        </HBox>
+    </top>
+
+    enter>
+    <VBox spacing="20" style="-fx-padding: 40;" maxWidth="800">
+        <Label fx:id="qNumLabel" text="Question 1 of X" textFill="#757575"/>
+        <Label fx:id="questionLabel" text="Loading..." wrapText="true" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+        <VBox spacing="10" style="-fx-padding: 20 0;">
+            <RadioButton fx:id="optA" text="Option A"> <toggleGroup><ToggleGroup fx:id="optionsGroup"/></toggleGroup> </RadioButton>
+            <RadioButton fx:id="optB" text="Option B" toggleGroup="$optionsGroup"/>
+            <RadioButton fx:id="optC" text="Option C" toggleGroup="$optionsGroup"/>
+            <RadioButton fx:id="optD" text="Option D" toggleGroup="$optionsGroup"/>
+        </VBox>
+    </VBox>
+</center>
+
+<bottom>
+<HBox style="-fx-padding: 20; -fx-background-color: white; -fx-border-color: #eee; -fx-border-width: 1 0 0 0;" alignment="CENTER_RIGHT" spacing="20">
+    <Button fx:id="nextBtn" text="Next Question" onAction="#handleNext" style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-padding: 10 20;"/>
+    <Button fx:id="submitBtn" text="Submit Exam" onAction="#handleSubmit" disable="true" style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-padding: 10 20; -fx-font-weight: bold;"/>
+</HBox>
+</bottom>
+        </BorderPane>

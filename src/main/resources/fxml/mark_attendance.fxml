@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.teacher.MarkAttendanceController"
+      style="-fx-padding: 20; -fx-background-color: white;" prefWidth="800" prefHeight="600">
+
+    <Label text="✅ Mark Attendance" textFill="#2e7d32">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <HBox spacing="20">
+        <!-- LEFT: Manual List -->
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <DatePicker fx:id="datePicker"/>
+                <Button text="Load Students" onAction="#loadStudents" style="-fx-background-color: #2e7d32; -fx-text-fill: white;"/>
+            </HBox>
+
+            <ListView fx:id="studentListView" VBox.vgrow="ALWAYS"/>
+
+            <HBox spacing="10">
+                <Button text="Mark All Present" onAction="#markAllPresent"/>
+                <Button text="Save" onAction="#saveAttendance" style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+
+
+        <!-- RIGHT: QR Generator -->
+        <VBox spacing="10" alignment="TOP_CENTER" style="-fx-border-color: #ddd; -fx-padding: 15; -fx-background-color: #f9f9f9;">
+            <Label text="Touchless Attendance" style="-fx-font-weight: bold;"/>
+            <Button text="🔲 Generate QR Code" onAction="#handleGenerateQR"
+                    style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+            <VBox fx:id="qrContainer" visible="false" alignment="CENTER" spacing="5">
+                <ImageView fx:id="qrView" fitWidth="200" fitHeight="200"/>
+                <Label fx:id="codeLabel" text="Code: ----" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <Label text="(Ask students to enter this code)" textFill="#757575"/>
+            </VBox>
+        </VBox>
+
+    </HBox>
+
+
+    <Label fx:id="statusLabel" textFill="blue" style="-fx-padding: 10 0 0 0;"/>
+</VBox>

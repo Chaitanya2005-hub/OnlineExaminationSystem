@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.student.PerformanceController"
+      style="-fx-padding: 30; -fx-background-color: white;" prefWidth="700" prefHeight="500">
+
+    <Label text="📈 Academic Performance" textFill="#d84315">
+        <font><Font name="System Bold" size="24"/></font>
+    </Label>
+    <Separator style="-fx-padding: 15 0 25 0;"/>
+
+    <LineChart fx:id="cgpaChart" title="Exam Score Progression" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <xAxis><CategoryAxis label="Exam Title"/></xAxis>
+        <yAxis><NumberAxis label="Score Obtained" lowerBound="0" upperBound="100"/></yAxis>
+    </LineChart>
+
+</VBox>

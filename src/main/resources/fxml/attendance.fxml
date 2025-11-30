@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.student.AttendanceController"
+      style="-fx-padding: 30; -fx-background-color: white;" prefWidth="650" prefHeight="550">
+
+    <Label text="📊 Attendance Record" textFill="#2e7d32">
+        <font><Font name="System Bold" size="24"/></font>
+    </Label>
+    <Separator style="-fx-padding: 15 0 25 0;"/>
+    <!-- QR Code Entry Section -->
+    <Separator style="-fx-padding: 20 0 10 0;"/>
+    <Label text="Touchless Attendance (Enter Code from Teacher):" style="-fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="codeField" promptText="Enter 4-digit Code" prefWidth="150"/>
+        <Button text="Submit Code" onAction="#handleMarkSelfAttendance"
+                style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+
+    <!-- Stats Cards -->
+    <HBox spacing="20" alignment="CENTER">
+        <VBox style="-fx-background-color: #e8f5e9; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 150;" alignment="CENTER">
+            <Label text="Total Classes" style="-fx-font-size: 14;"/>
+            <Label fx:id="lblTotal" text="0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #2e7d32;"/>
+        </VBox>
+        <VBox style="-fx-background-color: #c8e6c9; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 150;" alignment="CENTER">
+            <Label text="Present" style="-fx-font-size: 14;"/>
+            <Label fx:id="lblPresent" text="0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #1b5e20;"/>
+        </VBox>
+        <VBox style="-fx-background-color: #ffcdd2; -fx-padding: 20; -fx-background-radius: 10; -fx-min-width: 150;" alignment="CENTER">
+            <Label text="Absent" style="-fx-font-size: 14;"/>
+            <Label fx:id="lblAbsent" text="0" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #c62828;"/>
+        </VBox>
+    </HBox>
+
+    <Region prefHeight="30"/>
+
+    <PieChart fx:id="attendanceChart" title="Attendance Summary" VBox.vgrow="ALWAYS" labelsVisible="true"/>
+</VBox>

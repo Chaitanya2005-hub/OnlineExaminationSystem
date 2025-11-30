@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.teacher.ManageQuestionsController"
+      style="-fx-padding: 20; -fx-background-color: white;" prefWidth="900" prefHeight="600">
+
+    <Label text="✏️ Manage Exam Questions" textFill="#00695c">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <!-- Top Bar -->
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="Select Exam:" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="examSelector" prefWidth="300"/>
+        <Button text="Load Questions" onAction="#handleLoadQuestions" style="-fx-background-color: #00695c; -fx-text-fill: white;"/>
+    </HBox>
+
+    <Region prefHeight="15"/>
+
+    <!-- Split View -->
+    <SplitPane dividerPositions="0.6" VBox.vgrow="ALWAYS">
+        <items>
+            <!-- Table View -->
+            <TableView fx:id="questionTable">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colText" text="Question Text" prefWidth="350"/>
+                    <TableColumn fx:id="colAns" text="Ans" prefWidth="50"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+
+            <!-- Edit Form -->
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <Label text="Edit Question Details" style="-fx-font-weight: bold; -fx-underline: true;"/>
+
+                <Label text="Question:"/>
+                <TextArea fx:id="qTextField" wrapText="true" prefRowCount="4"/>
+
+                <GridPane hgap="5" vgap="5">
+                    <TextField fx:id="optA" promptText="Option A" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="optB" promptText="Option B" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <TextField fx:id="optC" promptText="Option C" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="optD" promptText="Option D" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Answer:"/>
+                    <ComboBox fx:id="correctBox" prefWidth="100"/>
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="🗑️ Delete" onAction="#handleDelete" style="-fx-background-color: #c62828; -fx-text-fill: white;"/>
+                    <Button text="💾 Update" onAction="#handleUpdate" style="-fx-background-color: #2e7d32; -fx-text-fill: white;"/>
+                </HBox>
+
+                <Label fx:id="statusLabel" textFill="blue"/>
+            </VBox>
+        </items>
+    </SplitPane>
+</VBox>

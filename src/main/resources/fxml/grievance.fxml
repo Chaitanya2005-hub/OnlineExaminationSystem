@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.stark.exam.ui.student.GrievanceController"
+      style="-fx-padding: 30; -fx-background-color: white;" prefWidth="600" prefHeight="500">
+
+    <Label text="⚖️ Grievance Portal" textFill="#d32f2f">
+        <font><Font name="System Bold" size="22"/></font>
+    </Label>
+    <Separator style="-fx-padding: 10 0 20 0;"/>
+
+    <Label text="Select Category:" style="-fx-font-weight: bold;"/>
+    <ComboBox fx:id="categoryBox" promptText="Select Issue Category" prefWidth="300"/>
+
+    <Label text="Description:" style="-fx-font-weight: bold; -fx-padding: 15 0 5 0;"/>
+    <TextArea fx:id="descField" promptText="Describe your issue in detail..." prefRowCount="5"/>
+
+    <HBox alignment="CENTER_RIGHT" style="-fx-padding: 20 0 0 0;">
+        <Button text="Submit Grievance" onAction="#handleSubmit"
+                style="-fx-background-color: #d32f2f; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" style="-fx-padding: 10 0 0 0;" textFill="green"/>
+</VBox>
