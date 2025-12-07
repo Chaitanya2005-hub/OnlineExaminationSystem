@@ -39,7 +39,7 @@ Programming Language: Java (JDK 17+)
 
 Frontend: JavaFX (FXML)
 
-Backend Database: MySQL 8.0
+Backend Database: MySQL 9.5
 
 Connectivity: JDBC
 
